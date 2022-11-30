@@ -1,1 +1,11 @@
+/* Installing the app */
+be in the top folder of the project (cd c:/{yourfoldername})
+python -m venv venv
+vevn\scripts\activate
+pip install -r requirements.txt
+
+/* Running the app */
+cd c:\{yourfoldername}\it_college\
+venv\scripts\activate
+cd c:\{yourfoldername}\it_college\it_site\
 py manage.py runserver
