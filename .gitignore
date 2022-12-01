@@ -1,3 +1,11 @@
+# Json #
+package-lock.json
+package.json
+
+# Bootstrap Icons Node #
+.node_modules/
+node_modules/
+
 # Django #
 *.log
 *.pot
