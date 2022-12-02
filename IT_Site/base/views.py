@@ -7,6 +7,9 @@ from .models import Course, Topic
 def home(request):
     return render(request, 'base/home.html')
 
+def about(request):
+    return render(request, 'base/about.html')
+
 def all_courses(request):
     q = request.GET.get('q') if request.GET.get('q') !=None else ''
 
@@ -28,3 +31,5 @@ def course(request, pk):
     context = {'course': course}
     return render(request, 'base/course.html', context)
 
+def faq(request):
+    return render(request, 'base/faq.html')
