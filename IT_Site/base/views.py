@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.db.models import Q
-from .models import Course, Topic
+from .models import Course, Topic, Module
 
 # Create your views here.
 
@@ -28,8 +28,19 @@ def all_courses(request):
 
 def course(request, pk):
     course = Course.objects.get(id=pk)
-    context = {'course': course}
+    modules = course.module_set.all()
+    context = {
+        'course': course,
+        'modules':modules,
+    }
     return render(request, 'base/course.html', context)
+
+
+def module(request, pk):
+    module = Module.objects.get(id=pk)
+    context = {
+        'module':module}
+    return render(request, 'base/module.html', context)
 
 def faq(request):
     return render(request, 'base/faq.html')
