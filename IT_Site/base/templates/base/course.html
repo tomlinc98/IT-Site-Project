@@ -9,4 +9,12 @@
 <h1>{{course.name}}</h1>
 <p>{{course.description}}</p>
 
+
+{% for module in modules %}
+   <h5>{{module.id}} -- <a href="{% url 'module' module.id %}">{{module.title}}</a></h5><br>
+
+
+{% endfor %}
+
+
 {% endblock %}
