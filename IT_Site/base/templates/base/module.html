@@ -5,5 +5,12 @@
 {% endblock %}
 
 {% block app_content %}
+<h1>{{module.title}}</h1><br>
+<p>{{module.course}}</p><br>
+<p>{{module.code}}</p><br>
+<p>{{module.description}}</p><br>
+<img src="{{module.staff_img.url}}" class="img-thumbnail" alt="staff picture" style="max-width:100px;">
+<p>{{module.staff_name}}</p><br>
+
 
 {% endblock %}
