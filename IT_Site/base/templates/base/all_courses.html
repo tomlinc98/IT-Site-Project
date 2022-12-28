@@ -1,53 +1,53 @@
 {% extends 'main.html' %}
 
 {% block styles %}
-    {#<link href="{{url_for('static', filename='css/home.css')}}" rel="stylesheet">#}
+{#<link href="{{url_for('static', filename='css/home.css')}}" rel="stylesheet">#}
 {% endblock %}
 
 {% block app_content %}
 
 <style>
-  .all-course-container{
+  .all-course-container {
     display: grid;
     grid-template-columns: 1fr 3fr;
   }
 </style>
 
 <form method="GET" action="{% url 'all_courses' %}">
-    <input type="text" name="q" placeholder="Search courses..." />
+  <input type="text" name="q" placeholder="Search courses..." />
 </form>
 
-<div class = "all-course-container">
+<div class="all-course-container">
+
+  <div>
+    <h3>Sort Topics</h3>
+    <hr>
 
     <div>
-      <h3>Sort Topics</h3>
-      <hr>
+      <a href="{% url 'all_courses' %}">All</a>
+    </div>
 
+    {% for topic in topics %}
+    <div>
+      <a href="{% url 'all_courses' %}?q={{topic.name}}">{{topic.name}}</a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div>
+    <h5>{{course_count}} courses found.</h5>
+
+    <div>
+      {% for course in courses %}
       <div>
-        <a href="{% url 'all_courses' %}" >All</a>
-      </div>
-
-      {% for topic in topics %}
+        <h5>{{course.id}} -- <a href="{% url 'course' course.id %}">{{course.title}}</a></h5>
         <div>
-          <a href="{% url 'all_courses' %}?q={{topic.name}}" >{{topic.name}}</a>
+
+          {% endfor %}
         </div>
-      {% endfor %}
-    </div>
-
-    <div>
-        <h5>{{course_count}} courses found.</h5>
-
-      <div>
-        {% for course in courses %}
-        <div>
-          <h5>{{course.id}} -- <a href="{% url 'course' course.id %}">{{course.title}}</a></h5>
-        <div>
-
-        {% endfor %}
       </div>
+
+
     </div>
 
-
-</div>
-
-{% endblock %}
+    {% endblock %}
