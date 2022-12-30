@@ -30,10 +30,30 @@
 {% endblock %}
 
 {% block content %}
-{# application content needs to be provided in the app_content block #}
-{% block app_content %}{% endblock %}
 
-{% include 'footer.html' %}
+{# fullwidth block is used to display the full width content #}
+{% block fullwidth %}{% endblock %}
+
+<!-- adverts for non-fullwidth page content -->
+<div class="row justify-content-center" style="padding-top: 50px;">
+  <!-- advert-left -->
+  <div class="col-md-1 skyscraper-ad">
+    <img src="https://placehold.co/120x600"/>
+  </div>
+
+  <div class="col-md-9">
+    {# application content needs to be provided in the app_content block #}
+    {% block app_content %}
+    {% endblock %}
+  </div>
+
+  <!-- advert-right -->
+  <div class="col-md-1 skyscraper-ad">
+    <img src="https://placehold.co/120x600"/>
+  </div>
+</div>
+
+  {% include 'footer.html' %}
 
 </html>
 {% endblock %}
