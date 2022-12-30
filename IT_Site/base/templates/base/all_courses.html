@@ -1,53 +1,63 @@
 {% extends 'main.html' %}
+{% load static %}
 
 {% block styles %}
-{#<link href="{{url_for('static', filename='css/home.css')}}" rel="stylesheet">#}
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/all_courses.css' %}" />
 {% endblock %}
 
 {% block app_content %}
 
-<style>
-  .all-course-container {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-  }
-</style>
+<!-- Wrap the rest of the page in containers to center all the content. -->
 
-<form method="GET" action="{% url 'all_courses' %}">
-  <input type="text" name="q" placeholder="Search courses..." />
-</form>
-
-<div class="all-course-container">
-
-  <div>
-    <h3>Sort Topics</h3>
-    <hr>
-
-    <div>
-      <a href="{% url 'all_courses' %}">All</a>
-    </div>
-
-    {% for topic in topics %}
-    <div>
-      <a href="{% url 'all_courses' %}?q={{topic.name}}">{{topic.name}}</a>
-    </div>
-    {% endfor %}
-  </div>
-
-  <div>
-    <h5>{{course_count}} courses found.</h5>
-
-    <div>
-      {% for course in courses %}
-      <div>
-        <h5>{{course.id}} -- <a href="{% url 'course' course.id %}">{{course.title}}</a></h5>
-        <div>
-
-          {% endfor %}
+<div class="container course-finder">
+  <div class="row">
+    <div class="course-title">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 text-center">
+            <h1>Our Courses</h1>
+            <p>Our page content is below</p>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="col-md-4">
+      <h3>Browse Topics</h3>
+      <hr>
 
+      <div class="topic-search">
+        <form action="" method="GET" class="course_search">
+          <label>
+            <input name="q" placeholder="Search for topics" />
+          </label>
+        </form>
 
+        <ul class="topic-list">
+          <li>
+            <a href="{% url 'all_courses' %}" class="active">All <span>{{topics.count}}</span></a>
+          </li>
+          {% for topic in topics %}
+          <div>
+            <a href="{% url 'all_courses' %}?q={{topic.name}}">{{topic.name}}</a>
+          </div>
+          {% endfor %}
+
+        </ul>
+      </div>
     </div>
 
-    {% endblock %}
+    <div class="col-md-8">
+      <div>
+        <p>{{course_count}} courses found.</p>
+
+        {% for course in courses %}
+        <div class="coure-list">
+          <a href="{% url 'course' course.id %}">{{course.title}}</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
