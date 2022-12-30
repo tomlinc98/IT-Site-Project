@@ -1,0 +1,13 @@
+.course-finder {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.course-finder h3 {
+    font-weight: 400;
+}
+
+/* add padding below the title */
+.course-title {
+    padding: 3rem;
+}
