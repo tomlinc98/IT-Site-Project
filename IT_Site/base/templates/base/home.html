@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/home.css' %}" />
 {% endblock %}
 
-{% block app_content %}
+{% block fullwidth %}
 
 <!-- carousel -->
 <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -67,11 +67,12 @@
 </div>
 <!-- end carousel -->
 
+{% endblock %}
+
+{% block app_content %}
 
 <!-- Wrap the rest of the page in containers to center all the content. -->
 <div class="container marketing">
-
-  <!-- Three columns of text below the carousel -->
   <div class="row">
     <div class="marketing-title">
       <div class="container">
