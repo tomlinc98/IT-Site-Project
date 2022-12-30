@@ -6,30 +6,47 @@
 {% endblock %}
 
 {% block app_content %}
-<h1> {{module.title}} </h1><br />
-<p> {{module.course}} </p><br />
-<p> {{module.code}} </p><br />
-<br />
-<img src=" {{module.staff_img.url}} " class="img-thumbnail" alt="staff picture" style="max-width:100px;" />
-<p>{{module.staff_name}}</p><br>
+<div class="row">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-6"><h1> {{module.title}} </h1></div>
+	<div class="col-sm-3"></div>
+</div>
 
 <div class="row">
-  <div class="col-sm-3"></div>
-  <div class="col-sm-6">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-3"><p> {{module.course}} </p></div>
+	<div class="col-sm-3"><p> {{module.code}} </p></div>
+	<div class="col-sm-3"></div>
+</div>
 
-  </div>
-  <div class="col-sm-3"></div>
+<div class="row">
+	<div class="col-sm-2 col-sm-offset-1"></div>
+	<div class="col-sm-2"><img src=" {{module.staff_img.url}} " class="img-thumbnail" alt="staff picture" style="max-width:100px;" /></div>
+	<div class="col-sm-2"></div>
+	<div class="col-sm-2"></div>
+	<div class="col-sm-2"></div>
 </div>
 <div class="row">
-  <div class="col-sm-3">AD</div>
+	<div class="col-sm-2 col-sm-offset-1"></div>
+	<div class="col-sm-2"><p>{{module.staff_name}}</p></div>
+	<div class="col-sm-2"></div>
+	<div class="col-sm-2"></div>
+	<div class="col-sm-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3"></div>
   <div class="col-sm-6"><p> {{module.description}} </p></div>
-  <div class="col-sm-3">AD</div>
+  <div class="col-sm-3"></div>
 </div>
+
 <div class="row">
-  <div class="col-sm-3"></div>
-  <div class="col-sm-6">Extra Module Notes</div>
-  <div class="col-sm-3"></div>
+  <div class="col-sm-3"><h3> ADVERT</h3> <img src="https://www.advertisingarchives.co.uk/assets/thumbnails/147/2/40707e3a0bf2e508b3e91fe62e4b45f6.jpg" alt="Girl in a jacket" width="100" height="200"> </div>
+	<div class="col-sm-3">3 cols</div>
+	<div class="col-sm-3">3 cols</div>
+  <div class="col-sm-3"><h3> ADVERT</h3> <img src="https://www.advertisingarchives.co.uk/assets/thumbnails/147/2/40707e3a0bf2e508b3e91fe62e4b45f6.jpg" alt="Girl in a jacket" width="100" height="200"> </div>
 </div>
+
 <div class="row">
   <div class="col-sm-3"></div>
   <div class="col-sm-6">
