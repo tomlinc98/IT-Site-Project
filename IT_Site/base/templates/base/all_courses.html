@@ -25,27 +25,24 @@
       <h3>Browse Topics</h3>
       <hr>
 
-      <div class="topic-search">
-        <form action="" method="GET" class="course_search">
-          <label>
-            <input name="q" placeholder="Search for topics" />
-          </label>
+      <div>      
+        <form class="d-flex">
+          <input class="form-control me-1" name="q" type="search" placeholder="Search for topics" aria-label="Search">
+          <button class="btn btn-primary" type="submit">Search</button>
         </form>
 
-        <ul class="topic-list">
-          <li>
-            <a href="{% url 'all_courses' %}" class="active">All <span>{{topics.count}}</span></a>
-          </li>
+        <div class="list-group">
+          <a href="{% url 'all_courses' %}" class="list-group-item list-group-item-action" aria-current="true">
+            All <span>{{topics.count}}</span>
+          </a>
           {% for topic in topics %}
-          <div>
-            <a href="{% url 'all_courses' %}?q={{topic.name}}">{{topic.name}}</a>
-          </div>
+            <a href="{% url 'all_courses' %}?q={{topic.name}}" class="list-group-item list-group-item-action">{{topic.name}}</a>
+            
           {% endfor %}
 
-        </ul>
+        </div>
       </div>
     </div>
-
     <div class="col-md-8">
       <div>
         <p>{{course_count}} courses found.</p>
