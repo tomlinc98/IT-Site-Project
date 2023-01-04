@@ -1,11 +1,81 @@
 {% extends 'main.html' %}
 {% load static %}
+{% load bootstrap_icons %}
 
 {% block styles %}
 <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/module.css' %}" />
 {% endblock %}
 
 {% block app_content %}
+
+<div class="container">
+  <div class="row">
+    <div class="back-btn" style="padding-left: 2rem;">
+      <p>
+        <button type="button" class="btn btn-primary" value="Previous Page" onClick="javascript:history.go(-1);">Back
+        </button>
+      </p>
+    </div>
+    <div class="col-md-8 col-xl-6 text-center mx-auto">
+      <h2>{{module.title}}</h2>
+      <p class="w-lg-50">{{module.code}} {% bs_icon 'dash-lg' %} {{module.course}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card border-0 shadow-none">
+        <div class="card-body text-center d-flex flex-column align-items-center p-0"><img
+            class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{module.staff_img.url}}" />
+          <h5 class="fw-bold text-primary card-title mb-0"><strong>{{module.staff_name}}</strong></h5>
+          <p class="text-muted card-text mb-2">Lecturer</p>
+          <ul class="list-inline fs-6 text-muted w-100 mb-0">
+            <li class="list-inline-item text-center">
+              <div class="d-flex flex-column align-items-center">{% bs_icon 'linkedin' %}</div>
+            </li>
+            <li class="list-inline-item text-center">
+              <div class="d-flex flex-column align-items-center">{% bs_icon 'twitter' %}</div>
+            </li>
+            <li class="list-inline-item text-center">
+              <div class="d-flex flex-column align-items-center">{% bs_icon 'facebook' %}</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <!-- add module image here -->
+      <!--<img class="img-fluid" src="{{module.img.url}}" /> -->
+      <p> {{module.description}} </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <form id="apply" action="" method="post">
+        <h3>Apply Form</h3>
+
+        <fieldset>
+          <input placeholder="Name" type="text" tabindex="1" required autofocus />
+        </fieldset>
+        <fieldset>
+          <input placeholder="Email Address" type="email" tabindex="2" required />
+        </fieldset>
+        <fieldset>
+          <input placeholder="Phone Number" type="tel" tabindex="3" required>
+        </fieldset>
+        <fieldset>
+          <textarea placeholder="Type your message here..." tabindex="5" required></textarea>
+        </fieldset>
+        <fieldset>
+          <button name="submit" type="submit" id="contactus-submit" data-submit="...Sending">Apply Now</button>
+        </fieldset>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<hr>
 
 <div class="container module-content">
   <div class="row">
