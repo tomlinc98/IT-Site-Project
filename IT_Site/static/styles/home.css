@@ -1,11 +1,6 @@
  /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
 
- /* Carousel base class */
- .carousel {
-     margin-bottom: 4rem;
- }
-
  /* Since positioning the image, we need to help out the caption */
  .carousel-caption {
      bottom: 3rem;
@@ -29,41 +24,18 @@
  /* MARKETING CONTENT
   -------------------------------------------------- */
 
- /* Center align the text within the three columns below the carousel */
- .marketing .col-lg-4 {
-     margin-bottom: 1.5rem;
-     text-align: center;
- }
-
- .marketing h2 {
-     font-weight: 400;
- }
-
- .marketing .col-lg-4 p {
-     margin-right: .75rem;
-     margin-left: .75rem;
- }
-
  /* add padding below the title */
  .marketing-title {
-     padding-bottom: 3rem;
+     padding: 1rem;
+
  }
 
 
- /* Featurettes
+ /* Hero banner
   ------------------------- */
 
- .featurette-divider {
-     margin: 5rem 0;
-     /* Space out the Bootstrap <hr> more */
- }
-
- /* Thin out the marketing headings */
- .featurette-heading {
-     font-weight: 300;
-     line-height: 1;
-     /* rtl:remove */
-     letter-spacing: -.05rem;
+ .hero-banner {
+    padding-bottom: 5rem;
  }
 
  /* RESPONSIVE CSS
