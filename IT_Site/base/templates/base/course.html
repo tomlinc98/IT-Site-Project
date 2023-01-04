@@ -21,7 +21,8 @@
         </div>
         <div class="col-12">
             {% for module in modules %}
-            <h5>{{module.id}} -- <a href="{% url 'module' module.id %}">{{module.title}}</a></h5><br>
+            <h5>{{module.code}} -- <a href="{% url 'module' module.id %}">{{module.title}}</a></h5><br>
+            <hr>
 
             {% endfor %}
         </div>
