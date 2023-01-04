@@ -1,5 +1,6 @@
 {% extends 'main.html' %}
 {% load static %}
+{% load bootstrap_icons %}
 
 {% block styles %}
 <link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/home.css' %}" />
@@ -72,73 +73,116 @@
 {% block app_content %}
 
 <!-- Wrap the rest of the page in containers to center all the content. -->
-<div class="container marketing">
-  <div class="row">
-    <div class="marketing-title">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-12 text-center">
-            <h1>Vertically Centered Masthead Content</h1>
-            <p>Our page content is below</p>
+<div class="container">
+  <div class="marketing-title">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 text-center">
+          <h1 class="fw-bold mb-3">Our Popular Courses</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+        style="background-image: url('unsplash-photo-1.jpg');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Course title here</h2>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="d-flex align-items-center me-3">
+              <svg class="bi me-2" width="1em" height="1em">
+                <use xlink:href="#geo-fill" /></svg>
+              <small>Course topic here</small>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+        style="background-image: url('unsplash-photo-1.jpg');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Course title here</h2>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="d-flex align-items-center me-3">
+              <svg class="bi me-2" width="1em" height="1em">
+                <use xlink:href="#geo-fill" /></svg>
+              <small>Course topic here</small>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+        style="background-image: url('unsplash-photo-1.jpg');">
+        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+          <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Course title here</h2>
+          <ul class="d-flex list-unstyled mt-auto">
+            <li class="d-flex align-items-center me-3">
+              <svg class="bi me-2" width="1em" height="1em">
+                <use xlink:href="#geo-fill" /></svg>
+              <small>Course topic here</small>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- hero banner -->
+<div class="container hero-banner">
+  <div class="row align-items-center">
+    <div class="text-white bg-primary border rounded border-0 p-4 py-5">
+      <div class="row h-100">
+        <div
+          class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
+          <div>
+            <h1 class="fw-bold text-white mb-3">Information and Technology College<br/> is <b><strong><ins>#1</ins></strong></b> for post 16 education in Warwickshire.</h1>
+            <p class="mb-4">We invite you to explore our website and learn more about all of our available courses and the modules and staff associated with each course. You can also register for one of our courses; we look forward to making your goals and dreams a reality</p><button
+              class="btn btn-light fs-5 py-2 px-4" type="button">Button</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-3 col-md-6">
-      <img class="img-fluid" width="140" height="140" src="{% static 'images/home/marketing/marketing1.jpg' %}"
-        preserveAspectRatio="xMidYMid slice" focusable="false" />
-      <h2>Heading</h2>
-      <p>Some representative placeholder content for the three columns of text below the carousel. This is the first
-        column.</p>
-      <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-    </div><!-- /.col-lg-3 col-md-6 -->
-    <div class="col-lg-3 col-md-6">
-      <img class="img-fluid" width="140" height="140" src="{% static 'images/home/marketing/marketing2.jpg' %}"
-        preserveAspectRatio="xMidYMid slice" focusable="false" />
-      <h2>Heading</h2>
-      <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-      <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-    </div><!-- /.col-lg-3 col-md-6 -->
-    <div class="col-lg-3 col-md-6">
-      <img class="img-fluid" width="140" height="140" src="{% static 'images/home/marketing/marketing3.jpg' %}"
-        preserveAspectRatio="xMidYMid slice" focusable="false" />
-      <h2>Heading</h2>
-      <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-      <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-    </div><!-- /.col-lg-3 col-md-6 -->
-    <div class="col-lg-3 col-md-6">
-      <img class="img-fluid" width="140" height="140" src="{% static 'images/home/marketing/marketing3.jpg' %}"
-        preserveAspectRatio="xMidYMid slice" focusable="false" />
-      <h2>Heading</h2>
-      <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-      <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-    </div><!-- /.col-lg-3 col-md-6 -->
-  </div><!-- /.row -->
+  </div>
+</div>
 
-</div><!-- /.container -->
-
-<!-- featurettes -->
-<div class="container featurettes">
-  <hr class="featurette-divider">
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">Featurette heading. <span class="text-muted">It’ll blow your mind.</span>
-      </h2>
-      <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.
-      </p>
-    </div>
-    <div class="col-md-5">
-      <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
-        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500"
-        preserveAspectRatio="xMidYMid slice" focusable="false">
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-      </svg>
-
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 d-flex justify-content-center">
+      <div class="registration-right">
+        <h2>Announcements</h2>
+        <div class="event-list">
+          <div class="card flex-row"><img class="card-img-left img-fluid" src="https://via.placeholder.com/150" />
+            <div class="card-body">
+              <h4 class="card-title h5 h4-sm"><span>AUG 01
+                  2021</span>{% bs_icon 'caret-right' %}<span>12:00 AM - 11:59 PM</span> </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
+            </div>
+          </div>
+          <div class="card flex-row"><img class="card-img-left img-fluid" src="https://via.placeholder.com/150" />
+            <div class="card-body">
+              <h4 class="card-title h5 h4-sm"><span>AUG 01
+                  2021</span>{% bs_icon 'caret-right' %}<span>12:00 AM - 11:59 PM</span> </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
+            </div>
+          </div>
+          <div class="card flex-row"><img class="card-img-left img-fluid" src="https://via.placeholder.com/150" />
+            <div class="card-body">
+              <h4 class="card-title h5 h4-sm"><span>AUG 01
+                  2021</span>{% bs_icon 'caret-right' %}<span>12:00 AM - 11:59 PM</span> </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <hr class="featurette-divider">
-</div><!-- /.featurettes -->
+</div>
 
 {% endblock %}
