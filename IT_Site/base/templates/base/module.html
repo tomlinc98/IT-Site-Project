@@ -10,20 +10,26 @@
 
 <div class="container">
   <div class="row">
+    <!-- Back button to previous page in browser page history-->
     <div class="back-btn" style="padding-left: 2rem;">
       <p>
         <button type="button" class="btn btn-primary" value="Previous Page" onClick="javascript:history.go(-1);">Back
         </button>
       </p>
     </div>
+
+    <!--Displays title, code and course for sleected module-->
     <div class="col-md-8 col-xl-6 text-center mx-auto">
       <h2>{{module.title}}</h2>
       <p class="w-lg-50">{{module.code}} {% bs_icon 'dash-lg' %} {{module.course}}</p>
     </div>
   </div>
+
+  <!-- Profile card for each Lectuerer assigned  to each module-->
   <div class="row">
     <div class="col-md-3">
       <div class="card border-0 shadow-none">
+        <!-- Displays associated Lectuerer details to selected module-->
         <div class="card-body text-center d-flex flex-column align-items-center p-0"><img
             class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{module.staff_img.url}}" />
           <h5 class="fw-bold text-primary card-title mb-0"><strong>{{module.staff_name}}</strong></h5>
@@ -42,6 +48,8 @@
         </div>
       </div>
     </div>
+
+    <!---->
     <div class="col-md-9">
       <!-- add module image here -->
       <!--<img class="img-fluid" src="{{module.img.url}}" /> -->
@@ -51,8 +59,9 @@
 <hr>
   <div class="row justify-content-center">
     <div class="col-sm-6">
+      <!-- Interactable form elements to fill in-->
       <form id="apply" action="" method="post">
-        <h3>Apply Form</h3>
+        <h3>Course Apply Form</h3>
 
         <fieldset>
           <input placeholder="Name" type="text" tabindex="1" required autofocus />
