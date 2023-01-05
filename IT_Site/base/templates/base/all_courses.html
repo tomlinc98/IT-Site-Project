@@ -33,7 +33,7 @@
 
         <div class="list-group">
           <a href="{% url 'all_courses' %}" class="list-group-item list-group-item-action" aria-current="true">
-            All <span class="badge bg-primary rounded-pill">{{topics.count}}</span>
+            All <span class="badge bg-primary rounded-pill">{{courses.count}}</span>
           </a>
           {% for topic in topics %}
           <a href="{% url 'all_courses' %}?q={{topic.name}}"
