@@ -8,7 +8,9 @@
 
 {% block app_content %}
 
+<!-- Wrap the page contents in a container to center everything -->
 <div class="container">
+  
   <div class="row">
     <div class="back-btn" style="padding-left: 2rem;">
       <p>
@@ -25,7 +27,7 @@
     <div class="col-md-3">
       <div class="card border-0 shadow-none">
         <div class="card-body text-center d-flex flex-column align-items-center p-0"><img
-            class="rounded-circle mb-3 fit-cover" width="130" height="130" src="{{module.staff_img.url}}" />
+            class="rounded-circle mb-3 fit-cover" width="130" height="130" style="object-fit: cover;" src="{{module.staff_img.url}}" />
           <h5 class="fw-bold text-primary card-title mb-0"><strong>{{module.staff_name}}</strong></h5>
           <p class="text-muted card-text mb-2">Lecturer</p>
           <ul class="list-inline fs-6 text-muted w-100 mb-0">
@@ -48,7 +50,7 @@
       <p> {{module.description}} </p>
     </div>
   </div>
-<hr>
+  <hr>
   <div class="row justify-content-center">
     <div class="col-sm-6">
       <form id="apply" action="" method="post">
