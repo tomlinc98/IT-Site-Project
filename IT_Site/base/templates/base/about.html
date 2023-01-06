@@ -1,9 +1,167 @@
 {% extends 'main.html' %}
+{% load static %}
+{% load bootstrap_icons %}
 
 {% block styles %}
-    {#<link href="{{url_for('static', filename='css/home.css')}}" rel="stylesheet">#}
+{#<link href="{{url_for('static', filename='css/home.css')}}" rel="stylesheet">#}
 {% endblock %}
 
 {% block app_content %}
+
+<!-- Wrap the page contents in a container to center everything -->
+<div class="container">
+
+    <!-- page-title -->
+    <div class="about-title">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col text-center">
+                    <h1>About Us</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- welcome-message -->
+    <div class="container py-4 py-xl-5">
+        <div class="row gy-4 gy-md-0">
+            <div class="col-md-2">
+                <div class="card border-0 shadow-none" style="padding-top: 3rem; padding-right: 2rem;">
+                    <div class="card-body text-center d-flex flex-column align-items-center p-0">
+                        <img class="rounded-circle mb-3 fit-cover" width="130" height="130" style="object-fit: cover;"
+                            src="{% static 'images/about/principal.jpg' %}" />
+                        <h5 class="fw-bold text-primary card-title mb-0"><strong>Keiron Birk</strong></h5>
+                        <p class="text-muted card-text mb-2">Principal</p>
+                        <ul class="list-inline fs-6 text-muted w-100 mb-0">
+                            <li class="list-inline-item text-center">
+                                <div class="d-flex flex-column align-items-center">{% bs_icon 'linkedin' %}</div>
+                            </li>
+                            <li class="list-inline-item text-center">
+                                <div class="d-flex flex-column align-items-center">{% bs_icon 'twitter' %}</div>
+                            </li>
+                            <li class="list-inline-item text-center">
+                                <div class="d-flex flex-column align-items-center">{% bs_icon 'facebook' %}</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="col-md-10 text-center text-md-start d-flex d-sm-flex d-md-flex justify-content-center align-items-center justify-content-md-start align-items-md-center justify-content-xl-center">
+                <div style="">
+                    <h2 class="text-uppercase fw-bold">A welcome message from our principal, <br><b> - Kieron Birk</b>
+                    </h2>
+                    <p class="my-3">At Information and Technology College, we are committed to providing our students
+                        with a comprehensive educational experience. Our college offers a broad range of academic and
+                        extracurricular opportunities to our diverse student body. Our state-of-the-art facilities and
+                        technology, as well as our renowned faculty and staff, provide a supportive environment for
+                        students to reach their full potential.
+                        <br><br>
+                        We encourage our students to explore their passions, discover their strengths, and make a
+                        positive impact on the world. Our rigorous course offerings challenge students to think
+                        critically, develop their own unique perspectives, and become leaders in the information and
+                        technology field.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- goals-box -->
+    <div class="py-4 py-xl-5">
+        <div class="container">
+            <div class="bg-light border rounded border-0 p-4 p-md-5">
+                <h2 class="fw-bold mb-3 text-primary">Why choose us?</h2>
+                <p class="mb-4">{%bs_icon 'dash-lg' %} Information and Technology College achieved 96% overall
+                    satisfaction in the National
+                    Student Survey for Higher Education in 2021.</p>
+                <p class="my-3">We provide an excellent standard of education with our courses to equip you with the
+                    skills and knowledge you need to start a successful career in the information and technology field.
+                    Furthermore our courses are taught by highly experienced and knowledgeable lecturers, who are
+                    passionate about helping you succeed.
+                    <b><i>But don't take our word for it read our alumni quotes:</i></b>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- testimonials -->
+    <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-2" style="padding-bottom: 7rem;">
+        <div class="col">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <p class="text-center">"I attended Information and Technology College for its excellent academics and
+                    diverse community. The courses I took allowed me to gain the necessary skills and knowledge to
+                    pursue a career in the Information and Technology field." </p>
+                <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50"
+                        src="https://via.placeholder.com/50" />
+                    <div>
+                        <p class="fw-bold text-primary mb-0">Chris Tomlin</p>
+                        <p class="text-muted mb-0">Alumni 2018-2022</p>
+                    </div>
+                </div>
+                <div class="card border-0 shadow-none">
+                    <div class="card-body d-flex align-items-center p-0"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <p class="text-center">"I chose Information & Technology College as I believed it was the best place for
+                    me to develop academically and as a young adult. The college set tasks that would help me develop
+                    and more importantly, they challenge you to be independent”</p>
+                <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50"
+                        src="https://via.placeholder.com/50" />
+                    <div>
+                        <p class="fw-bold text-primary mb-0">Heather Smith</p>
+                        <p class="text-muted mb-0">Alumni 2018-2022</p>
+                    </div>
+                </div>
+                <div class="card border-0 shadow-none">
+                    <div class="card-body d-flex align-items-center p-0"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact-map -->
+    <div class="position-relative py-5">
+        <div class="d-md-none"><iframe allowfullscreen frameborder="0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5774.074410082202!2d-1.4696491383175394!3d52.52078369574288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48774e1ce7bdedd9%3A0x4f85263fe3229217!2sRiversley%20Park!5e0!3m2!1sen!2suk!4v1673012825853!5m2!1sen!2suk"
+                width="100%" height="100%"></iframe></div>
+        <div class="d-none d-md-block position-absolute top-0 start-0 w-100 h-100"><iframe allowfullscreen
+                frameborder="0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5774.074410082202!2d-1.4696491383175394!3d52.52078369574288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48774e1ce7bdedd9%3A0x4f85263fe3229217!2sRiversley%20Park!5e0!3m2!1sen!2suk!4v1673012825853!5m2!1sen!2suk"
+                width="100%" height="100%"></iframe></div>
+        <div class="position-relative mx-2 my-5 m-md-5">
+            <div class="container position-relative">
+                <div class="row">
+                    <div class="col-md-6 col-xl-5 col-xxl-4 offset-md-6 offset-xl-7 offset-xxl-8">
+                        <div>
+                            <form class="border rounded shadow p-3 p-md-4 p-lg-5" method="post"
+                                style="background: var(--bs-body-bg);">
+                                <h3 class="text-center mb-3 text-primary">Contact us</h3>
+                                <div class="mb-3">
+                                    <p>Information and <br>Technology College<br>Leicester Road<br>Nuneaton<br>CV11
+                                        6AB<br>Warwickshire</p>
+                                </div>
+                                <div class="mb-3">
+                                    <p>
+                                        <hr>Open Mon – Fri | 8am – 6pm <br> Tel: +44 (0) 2488676577</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+</div>
+
+
 
 {% endblock %}
