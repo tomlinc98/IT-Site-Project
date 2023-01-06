@@ -6,3 +6,4 @@ Pillow==9.3.0
 soupsieve==2.3.2.post1
 sqlparse==0.4.3
 tzdata==2022.6
+django-bootstrap-icons==0.8.2
