@@ -82,15 +82,13 @@
   </div>
   <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
     <div class="col">
-      <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+      <div class="card card-cover  overflow-hidden text-white bg-dark rounded-5 shadow-lg">
         <img src="{{course1.course_img.url}}" class="card-img">
         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
           <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{course1.title}}</h2>
           <ul class="d-flex list-unstyled mt-auto">
             <li class="d-flex align-items-center me-3">
-              <svg class="bi me-2" width="1em" height="1em">
-                <use xlink:href="#geo-fill" /></svg>
-                <a class="btn btn-lg btn-primary" href="/course/1/">Read more</a>
+              <a class="btn btn-lg btn-primary" href="/course/1/">Read more</a>
             </li>
           </ul>
         </div>
@@ -100,13 +98,11 @@
     <div class="col">
       <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
         <img src="{{course2.course_img.url}}" class="card-img">
-        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+        <div class="d-flex flex-column p-5 pb-3 text-white text-shadow-1">
           <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{course2.title}}</h2>
           <ul class="d-flex list-unstyled mt-auto">
             <li class="d-flex align-items-center me-3">
-              <svg class="bi me-2" width="1em" height="1em">
-                <use xlink:href="#geo-fill" /></svg>
-                <a class="btn btn-lg btn-primary" href="/course/2/">Read more</a>
+              <a class="btn btn-lg btn-primary" href="/course/2/">Read more</a>
             </li>
           </ul>
         </div>
@@ -115,13 +111,11 @@
 
     <div class="col">
       <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
-      <img src="{{course3.course_img.url}}" class="card-img">
-        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+        <img src="{{course3.course_img.url}}" class="card-img">
+        <div class="d-flex flex-column p-5 pb-3 text-white text-shadow-1">
           <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{course3.title}}</h2>
           <ul class="d-flex list-unstyled mt-auto">
             <li class="d-flex align-items-center me-3">
-              <svg class="bi me-2" width="1em" height="1em">
-                <use xlink:href="#geo-fill" /></svg>
               <a class="btn btn-lg btn-primary" href="/course/3/">Read more</a>
           </ul>
         </div>
@@ -151,36 +145,70 @@
 </div>
 
 <!-- announcements-->
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col-md-6 d-flex justify-content-center">
+    <div class="col-md-5 d-flex justify-content-center">
       <div class="registration-right" id="ann" data-spy="scroll" data-target="#myCarousel" data-offset="0">
-        <h2>Announcements</h2>
+        <h2>Announcements:</h2>
         <div class="event-list">
-          <div class="card flex-row"><img class="card-img-left img-fluid" src="https://via.placeholder.com/150" />
+          {% for announcement in announcements %}
+          <div class="card flex-row">
             <div class="card-body">
-              <h4 class="card-title h5 h4-sm"><span>AUG 01
-                  2021</span>{% bs_icon 'caret-right' %}<span>12:00 AM - 11:59 PM</span> </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
+              <h4 class="card-title h5 h4-sm"><b>{{announcement.title}}</b></h4>
+              <p class="card-text">
+                {{announcement.description}}</p>
+              <p class="card-title">Posted: {% bs_icon 'caret-right' %}<span>{{announcement.posted}}</span></p>
             </div>
           </div>
-          <div class="card flex-row"><img class="card-img-left img-fluid" src="https://via.placeholder.com/150" />
-            <div class="card-body">
-              <h4 class="card-title h5 h4-sm"><span>AUG 01
-                  2021</span>{% bs_icon 'caret-right' %}<span>12:00 AM - 11:59 PM</span> </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
-            </div>
-          </div>
-          <div class="card flex-row"><img class="card-img-left img-fluid" src="https://via.placeholder.com/150" />
-            <div class="card-body">
-              <h4 class="card-title h5 h4-sm"><span>AUG 01
-                  2021</span>{% bs_icon 'caret-right' %}<span>12:00 AM - 11:59 PM</span> </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7 d-flex justify-content-center">
+      <div class="registration-right">
+        <h2>Events:</h2>
+        <div id="myTabContent" class="tab-content">
+          <div id="home" class="tab-pane fade active show" role="tabpanel">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="text-center" scope="col">Date</th>
+                    <th scope="col">Speakers</th>
+                    <th scope="col">Session</th>
+                    <th scope="col">Venue</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for event in events %}
+                  <tr class="inner-box">
+                    <th scope="row justify-content-center">
+                      <div class="event-date"><span>{{event.date}}</span></div>
+                    </th>
+                    <td>
+                      <img class="mb-3 fit-cover" width="130" height="130" style="object-fit: cover;"
+                        src="{{event.event_img.url}}" />
+                      <p><b>{{event.speaker}}</b></p>
+                    </td>
+                    <td>
+                      <div class="event-wrap">
+                        <h3>{{event.title}}</h3>
+                        <a>{{event.description}}</a>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="time"><span><b>{{event.venue}}</b></span></div>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <hr>
   </div>
 </div>
 
