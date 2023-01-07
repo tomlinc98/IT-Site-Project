@@ -6,7 +6,11 @@ from .models import Course, Topic, Module
 
 
 def home(request):
-    return render(request, 'base/home.html')
+    pk = [1, 2, 3]
+    courses = Course.objects.filter(id__in=pk)
+    context = {f'course{i}': course for i,
+               course in enumerate(courses, start=1)}
+    return render(request, 'base/home.html', context)
 
 
 def about(request):
