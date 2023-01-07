@@ -15,7 +15,7 @@
         <div class="row align-items-center">
           <div class="col-12 text-center">
             <h1>Our Courses</h1>
-            <p>Our page content is below</p>
+            <p>Search for your course or select a topic.</p>
           </div>
         </div>
       </div>
@@ -35,10 +35,9 @@
             All <span class="badge bg-primary rounded-pill">{{courses.count}}</span>
           </a>
           {% for topic in topics %}
-          <a href="{% url 'all_courses' %}?q={{topic.name}}"
-            class="list-group-item list-group-item-action">
+          <a href="{% url 'all_courses' %}?q={{topic.name}}" class="list-group-item list-group-item-action">
             {{topic.name}}</a>
-            
+
 
           {% endfor %}
 
@@ -46,17 +45,18 @@
       </div>
     </div>
     <div class="col-md-8">
-      <div>
-        <p>{{course_count}} courses found.</p>
-
+      <p>{{course_count}} courses found.</p>
+      <div class="card-group">
         {% for course in courses %}
-        <div class="course-list">
-          <a href="{% url 'course' course.id %}">{{course.title}}</a>
+        <div class="card"><img class="card-img-top w-100 d-block" src="{{course.course_img.url}}" class="card-img-top"
+            alt="course image" />
+          <div class="card-body">
+            <h4 class="card-title">{{course.title}}</h4>
+            <p class="card-text">{{course.topic}}</p>
+            <a href="{% url 'course' course.id %}" class="btn btn-primary">View Course</a>
+          </div>
         </div>
         {% endfor %}
-
-        --- card here ---
-
       </div>
     </div>
   </div>
