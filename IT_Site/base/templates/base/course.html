@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block styles %}
-{#<link href="{{url_for('static', filename='css/home.css')}}" rel="stylesheet">#}
+<link rel="stylesheet" type="text/css" media="screen" href="{% static 'styles/applyform.css' %}" />
 {% endblock %}
 
 {% block app_content %}
@@ -28,6 +28,30 @@
           <p>{{course.description}}</p>
           <img src="{{course.course_img.url}}" alt="course image" class="img-fluid" style="max-height: 400px">
         </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-sm-6">
+        <!-- Interactable form elements to fill in-->
+        <form id="apply" action="" method="post">
+          <h3>Course Apply Form</h3>
+  
+          <fieldset>
+            <input placeholder="Name" type="text" tabindex="1" required autofocus />
+          </fieldset>
+          <fieldset>
+            <input placeholder="Email Address" type="email" tabindex="2" required />
+          </fieldset>
+          <fieldset>
+            <input placeholder="Phone Number" type="tel" tabindex="3" required>
+          </fieldset>
+          <fieldset>
+            <textarea placeholder="Type your message here..." tabindex="5" required></textarea>
+          </fieldset>
+          <fieldset>
+            <button name="submit" type="submit" id="contactus-submit" data-submit="...Sending">Apply Now</button>
+          </fieldset>
+        </form>
       </div>
     </div>
   </div>
