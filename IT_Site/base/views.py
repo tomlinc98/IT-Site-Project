@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.db.models import Q
-from .models import Course, Topic, Module
+from .models import Course, Topic, Module, Advert, Announcement, Event
 
 # Create your views here.
 
@@ -10,6 +10,13 @@ def home(request):
     courses = Course.objects.filter(id__in=pk)
     context = {f'course{i}': course for i,
                course in enumerate(courses, start=1)}
+
+    announcements = Announcement.objects.all()
+    context['announcements'] = announcements
+
+    events = Event.objects.all()
+    context['events'] = events
+
     return render(request, 'base/home.html', context)
 
 
