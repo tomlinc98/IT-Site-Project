@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-8 col-xl-6 text-center mx-auto">
       <h2>{{module.title}}</h2>
-      <p class="w-lg-50">{{module.code}} {% bs_icon 'dash-lg' %} {% for course in module.course.all %} {{ course }} | {% endfor %}</p>
+      <p class="w-lg-50">{{module.code}} {% bs_icon 'dash-lg' %} {% for course in module.course.all %} {{ course }} {% endfor %}</p>
     </div>
   </div>
   <div class="row">
