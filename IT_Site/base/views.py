@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.db.models import Q
-from .models import Course, Topic, Module, Advert, Announcement, Event
+from .models import Course, Topic, Module, Advert, Announcement, Event, Comment
 
 # Create your views here.
 
@@ -60,4 +60,12 @@ def module(request, pk):
 
 
 def faq(request):
-    return render(request, 'base/faq.html')
+    comments = Comment.objects.all()
+    context = {
+        'comments': comments}
+
+    return render(request, 'base/faq.html', context)
+
+
+def privacy(request):
+    return render(request, 'base/legal/privacy.html')

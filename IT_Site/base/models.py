@@ -69,3 +69,14 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+# a django class for reviews
+
+
+class Comment(models.Model):
+    name = models.CharField(max_length=200)
+    message = models.TextField()
+    created = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name

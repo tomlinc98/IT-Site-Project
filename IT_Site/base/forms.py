@@ -1,4 +1,11 @@
+from .models import Comment
+from django import forms
 
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('name', 'message')
 
 # class CourseRegister(models.Model):
 #    course = models.ForeignKey(Course, on_delete=models.PROTECT)
