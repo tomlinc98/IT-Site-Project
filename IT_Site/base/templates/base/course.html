@@ -8,31 +8,29 @@
 {% block app_content %}
 
 <div class="container course-page">
-    <div class="row">
-        <div class="back-btn" style="padding-left: 2rem;">
-            <p>
-              <button type="button" class="btn btn-primary" value="Previous Page" onClick="javascript:history.go(-1);">Back
-              </button>
-            </p>
-          </div>
-        <div class="course-title">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 text-center">
-                        <h1>{{course.title}}</h1>
-                        <img src="{{course.course_img.url}}" alt="course image" class="img-fluid">
-                        <p>{{course.description}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12">
-            {% for module in modules %}
-            <h5>{{module.code}} -- <a href="{% url 'module' module.id %}">{{module.title}}</a></h5><br>
-            <hr>
-
-            {% endfor %}
-        </div>
+  <div class="row">
+    <div class="back-btn" style="padding-left: 2rem;">
+      <p>
+        <button type="button" class="btn btn-primary" value="Previous Page" onClick="javascript:history.go(-1);">Back
+        </button>
+      </p>
     </div>
+    <div class="container" style="padding: 20px;margin: 1px;">
+      <div class="row">
+        <div class="col-sm-4 col-md-5 col-lg-5">
+          {% for module in modules %}
+          <h5>{{module.code}} -- <a href="{% url 'module' module.id %}">{{module.title}}</a></h5><br>
+          <hr>
+          {% endfor %}
+        </div>
+        <div class="col-sm-8 col-md-7 col-lg-7">
+          <h1>{{course.title}}</h1>
+          <p>{{course.description}}</p>
+          <img src="{{course.course_img.url}}" alt="course image" class="img-fluid" style="max-height: 400px">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 {% endblock %}
