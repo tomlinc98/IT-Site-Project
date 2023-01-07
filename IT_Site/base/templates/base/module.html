@@ -21,7 +21,7 @@
     </div>
 
     <!--Displays title, code and course for sleected module-->
-    <div class="col-md-8 col-xl-6 text-center mx-auto">
+    <div class="col-md-8 col-xl-6 mx-auto text-center ">
       <h2>{{module.title}}</h2>
       <p class="w-lg-50">{{module.code}} {% bs_icon 'dash-lg' %} {% for course in module.course.all %} {{ course }} {% endfor %}</p>
     </div>
@@ -52,10 +52,20 @@
     </div>
 
     <!--Displays the selected module description-->
-    <div class="col-md-9">
-      <!-- add module image here -->
-      <!--<img class="img-fluid" src="{{module.img.url}}" /> -->
-      <p> {{module.description}} </p>
+    <div class="col-md-9" style="padding-left: 2rem;">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-sm-8 col-md-5 col-lg-5">
+                  <p> {{module.description}} </p>
+              </div>
+              <div class="col-sm-4 col-md-7 col-lg-7">
+                <img src="{{module.module_img.url}}" alt="course image" class="img-fluid" style="max-height: 400px; padding: 1rem;">
+              </div>
+          </div>
+      </div>
+  </div>
+
+
     </div>
   </div>
   <hr>
