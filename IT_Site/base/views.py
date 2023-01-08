@@ -69,3 +69,7 @@ def faq(request):
 
 def privacy(request):
     return render(request, 'base/legal/privacy.html')
+
+
+def cookies(request):
+    return render(request, 'base/legal/cookies.html')

@@ -9,4 +9,5 @@ urlpatterns = [
     path('module/<str:pk>/', views.module, name="module"),
     path('faq', views.faq, name="faq"),
     path('privacy', views.privacy, name="privacy"),
+    path('cookies', views.cookies, name="cookies"),
 ]
