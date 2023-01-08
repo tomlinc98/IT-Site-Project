@@ -9,8 +9,8 @@
 {% block app_content %}
 
 <!-- Wrap the page contents in a container to center everything -->
-<div class="container">
-  
+<div class="container" style="padding-top: 4rem;">
+
   <div class="row">
     <!-- Back button to previous page in browser page history-->
     <div class="back-btn" style="padding-left: 2rem;">
@@ -23,7 +23,8 @@
     <!--Displays title, code and course for sleected module-->
     <div class="col-md-8 col-xl-6 mx-auto text-center ">
       <h2>{{module.title}}</h2>
-      <p class="w-lg-50">{{module.code}} {% bs_icon 'dash-lg' %} {% for course in module.course.all %} {{ course }} {% endfor %}</p>
+      <p class="w-lg-50">{{module.code}} {% bs_icon 'dash-lg' %} {% for course in module.course.all %} {{ course }}
+        {% endfor %}</p>
     </div>
   </div>
 
@@ -33,7 +34,8 @@
       <div class="card border-0 shadow-none">
         <!-- Displays associated Lectuerer details to selected module-->
         <div class="card-body text-center d-flex flex-column align-items-center p-0"><img
-            class="rounded-circle mb-3 fit-cover" width="130" height="130" style="object-fit: cover;" src="{{module.staff_img.url}}" />
+            class="rounded-circle mb-3 fit-cover" width="130" height="130" style="object-fit: cover;"
+            src="{{module.staff_img.url}}" />
           <h5 class="fw-bold text-primary card-title mb-0"><strong>{{module.staff_name}}</strong></h5>
           <p class="text-muted card-text mb-2">Lecturer</p>
           <ul class="list-inline fs-6 text-muted w-100 mb-0">
@@ -52,23 +54,21 @@
     </div>
 
     <!--Displays the selected module description-->
-    <div class="col-md-9" style="padding-left: 2rem;">
+    <div class="col-md-9" style="padding-left: 2rem; padding-bottom: 4rem;">
       <div class="container">
-          <div class="row align-items-center">
-              <div class="col-sm-8 col-md-5 col-lg-5">
-                  <p> {{module.description}} </p>
-              </div>
-              <div class="col-sm-4 col-md-7 col-lg-7">
-                <img src="{{module.module_img.url}}" alt="course image" class="img-fluid" style="max-height: 400px; padding: 1rem;">
-              </div>
+        <div class="row align-items-center">
+          <div class="col-sm-8 col-md-5 col-lg-5">
+            <p> {{module.description}} </p>
           </div>
+          <div class="col-sm-4 col-md-7 col-lg-7">
+            <img src="{{module.module_img.url}}" alt="course image" class="img-fluid"
+              style="max-height: 400px; padding: 1rem;">
+          </div>
+        </div>
       </div>
-  </div>
-
-
     </div>
+    <hr>
   </div>
-  <hr>
 </div>
 
 {% endblock %}
